@@ -1,0 +1,39 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:1.5.0-beta3'
+    classpath 'com.dicedmelon.gradle:jacoco-android:0.1.0'
+  }
+}
+
+ext {
+  configCompileSdkVersion = 23
+  configTargetSdkVersion = 23
+  configBuildToolsVersion = '23.0.2'
+
+  supportVersion = '23.0.1'
+  support = [annotations: "com.android.support:support-annotations:$supportVersion",
+             appCompat  : "com.android.support:appcompat-v7:$supportVersion"]
+
+  assertJCore = 'org.assertj:assertj-core:1.7.1'
+  junit = 'junit:junit:4.12'
+
+  supportTest = [espressoCore: 'com.android.support.test.espresso:espresso-core:2.2.1',
+                 rules       : 'com.android.support.test:rules:0.4.1',
+                 runner      : 'com.android.support.test:runner:0.4.1']
+
+  jacocoExcludes = ['**/R.class',
+                    '**/R$*.class',
+                    '**/BuildConfig.*',
+                    '**/Manifest*.*']
+}
+
+allprojects {
+  repositories {
+    jcenter()
+  }
+
+  project.version = '0.1.0'
+}

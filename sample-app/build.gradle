@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+apply plugin: 'jacoco-android'
+
+android {
+  compileSdkVersion configCompileSdkVersion
+  buildToolsVersion configBuildToolsVersion
+
+  defaultConfig {
+    minSdkVersion 15
+    targetSdkVersion configTargetSdkVersion
+    versionCode 1
+    versionName project.version
+  }
+
+  productFlavors {
+    free {
+      applicationId 'com.dicedmelon.example.android.free'
+    }
+    paid {
+      applicationId 'com.dicedmelon.example.android'
+    }
+  }
+
+  buildTypes {
+    release {
+      proguardFiles getDefaultProguardFile('proguard-android.txt')
+    }
+    debug {
+      applicationIdSuffix '.debug'
+      versionNameSuffix '-debug'
+    }
+  }
+}
+
+dependencies {
+  compile support.appCompat
+
+  testCompile assertJCore
+  testCompile junit
+}
+
+jacocoAndroidUnitTestReport {
+  excludes = jacocoExcludes
+}
