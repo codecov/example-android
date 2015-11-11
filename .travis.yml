@@ -2,8 +2,7 @@ language: android
 jdk: oraclejdk8
 android:
   components:
-  - tools
-  - build-tools-23.0.2
+  - build-tools-23.0.1
   - android-23
   - extra-android-m2repository
 script: ./gradlew build jacocoTestReport
