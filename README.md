@@ -1,3 +1,5 @@
+[![codecov.io](https://codecov.io/github/arturdm/codecov-android-example/coverage.svg?branch=master)](https://codecov.io/github/arturdm/codecov-android-example?branch=master)
+
 # codecov-android-example
 
 This repository serves as an example on how to integrate [Codecov](https://codecov.io) in Android
