@@ -1,3 +1,5 @@
+[![codecov.io](https://codecov.io/github/arturdm/codecov-android-example/coverage.svg?branch=master)](https://codecov.io/github/arturdm/codecov-android-example?branch=master)
+
 # codecov-android-example
 
 This repository serves as an example on how to integrate [Codecov](https://codecov.io) in Android
@@ -21,9 +23,12 @@ configure it to build the project, generate test coverage reports and upload the
 
 ```yml
 language: android
+jdk: oraclejdk8
 android:
   components:
-  - build-tools-23.0.1
+  - tools
+  - platform-tools
+  - build-tools-23.0.2
   - android-23
   - extra-android-m2repository
 script: ./gradlew build jacocoTestReport
