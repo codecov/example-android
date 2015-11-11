@@ -23,8 +23,10 @@ configure it to build the project, generate test coverage reports and upload the
 
 ```yml
 language: android
+jdk: oraclejdk8
 android:
   components:
+  - tools
   - build-tools-23.0.1
   - android-23
   - extra-android-m2repository
