@@ -1,4 +1,4 @@
-[![codecov.io](https://codecov.io/github/arturdm/codecov-android-example/coverage.svg?branch=master)](https://codecov.io/github/arturdm/codecov-android-example?branch=master)
+[![codecov.io](https://codecov.io/github/codecov/example-android/coverage.svg?branch=master)](https://codecov.io/github/codecov/example-android?branch=master)
 
 # codecov-android-example
 
