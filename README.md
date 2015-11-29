@@ -1,6 +1,5 @@
 [![codecov.io](https://codecov.io/github/codecov/example-android/coverage.svg?branch=master)](https://codecov.io/github/codecov/example-android?branch=master)
-
-# codecov-android-example
+# Codecov Android Example
 
 This repository serves as an example on how to integrate [Codecov](https://codecov.io) in Android
 projects.

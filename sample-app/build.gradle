@@ -30,6 +30,10 @@ android {
       versionNameSuffix '-debug'
     }
   }
+
+  dataBinding {
+    enabled = true
+  }
 }
 
 dependencies {
@@ -40,5 +44,6 @@ dependencies {
 }
 
 jacocoAndroidUnitTestReport {
-  excludes = jacocoExcludes
+  excludes += rootProject.ext.jacocoExcludes
+  html.enabled false
 }
