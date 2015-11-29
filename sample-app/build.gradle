@@ -10,6 +10,7 @@ android {
     targetSdkVersion configTargetSdkVersion
     versionCode 1
     versionName project.version
+    testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
   }
 
   productFlavors {
@@ -28,6 +29,7 @@ android {
     debug {
       applicationIdSuffix '.debug'
       versionNameSuffix '-debug'
+      testCoverageEnabled true
     }
   }
 
@@ -41,6 +43,9 @@ dependencies {
 
   testCompile assertJCore
   testCompile junit
+
+  androidTestCompile supportTest.espressoCore
+  androidTestCompile supportTest.rules
 }
 
 jacocoAndroidUnitTestReport {
