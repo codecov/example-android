@@ -1,5 +1,10 @@
 language: android
 jdk: oraclejdk8
+env:
+  global:
+    - ANDROID_TARGET=android-15
+    - ANDROID_ABI=armeabi-v7a
+    - ADB_INSTALL_TIMEOUT=8
 android:
   components:
   - tools
@@ -7,12 +12,13 @@ android:
   - build-tools-23.0.2
   - android-23
   - extra-android-m2repository
-  - sys-img-armeabi-v7a-android-23
-before_script:
-  - echo no | android create avd --force -n test -t android-23 --abi armeabi-v7a
+  - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
+script:
+  - ./gradlew build jacocoTestReport assembleAndroidTest
+  - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
-  - adb shell input keyevent 82 &
-script: ./gradlew build jacocoTestReport connectedCheck
+  - adb shell setprop dalvik.vm.dexopt-flags v=n,o=v
+  - ./gradlew connectedCheck
 after_success:
   - bash <(curl -s https://codecov.io/bash)
