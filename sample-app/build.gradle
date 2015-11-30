@@ -23,9 +23,6 @@ android {
   }
 
   buildTypes {
-    release {
-      proguardFiles getDefaultProguardFile('proguard-android.txt')
-    }
     debug {
       applicationIdSuffix '.debug'
       versionNameSuffix '-debug'
@@ -46,9 +43,4 @@ dependencies {
 
   androidTestCompile supportTest.espressoCore
   androidTestCompile supportTest.rules
-}
-
-jacocoAndroidUnitTestReport {
-  excludes += rootProject.ext.jacocoExcludes
-  html.enabled false
 }
