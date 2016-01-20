@@ -13,12 +13,22 @@ android {
     testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
   }
 
+  flavorDimensions 'package', 'target'
+
   productFlavors {
-    free {
+    beta {
+      dimension 'package'
       applicationId 'com.dicedmelon.example.android.free'
     }
-    paid {
+    pro {
+      dimension 'package'
       applicationId 'com.dicedmelon.example.android'
+    }
+    googlePlayStore {
+      dimension 'target'
+    }
+    amazon {
+      dimension 'target'
     }
   }
 
