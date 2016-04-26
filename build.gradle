@@ -3,7 +3,7 @@ buildscript {
     jcenter()
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:1.5.0'
+    classpath 'com.android.tools.build:gradle:2.0.0'
     classpath 'com.dicedmelon.gradle:jacoco-android:0.1.1'
   }
 }
@@ -11,17 +11,17 @@ buildscript {
 ext {
   configCompileSdkVersion = 23
   configTargetSdkVersion = 23
-  configBuildToolsVersion = '23.0.2'
+  configBuildToolsVersion = '23.0.3'
 
-  supportVersion = '23.0.1'
+  supportVersion = '23.1.1'
   support = [annotations: "com.android.support:support-annotations:$supportVersion",
              appCompat  : "com.android.support:appcompat-v7:$supportVersion"]
 
   assertJCore = 'org.assertj:assertj-core:1.7.1'
   junit = 'junit:junit:4.12'
 
-  supportTest = [espressoCore: 'com.android.support.test.espresso:espresso-core:2.2.1',
-                 rules       : 'com.android.support.test:rules:0.4.1']
+  supportTest = [espressoCore: 'com.android.support.test.espresso:espresso-core:2.2.2',
+                 rules       : 'com.android.support.test:rules:0.5']
 }
 
 allprojects {
