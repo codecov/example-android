@@ -35,14 +35,9 @@ Running the command below generates the reports:
 ```
 ./gradlew connectedCheck
 ```
-## Support
-### Contact
-- Intercom (in-app messanger)
-- Email: support@codecov.io
-- Slack: slack.codecov.io
-- [gh/codecov/support](https://github.com/codecov/support)
-
 
 1. More documentation at https://docs.codecov.io
 2. Configure codecov through the `codecov.yml`  https://docs.codecov.io/docs/codecov-yaml
 3. View source and learn more about [Codecov Global Uploader](https://github.com/codecov/codecov-bash)
+
+We are happy to help if you have any questions. Please contact email our Support at [support@codecov.io](mailto:support@codecov.io)
