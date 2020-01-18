@@ -2,14 +2,14 @@ language: android
 jdk: oraclejdk8
 env:
   global:
-    - ANDROID_TARGET=android-22
+    - ANDROID_TARGET=android-28
     - ANDROID_ABI=armeabi-v7a
 android:
   components:
   - tools
   - platform-tools
-  - build-tools-23.0.3
-  - android-23
+  - build-tools-28.0.3
+  - android-28
   - extra-android-m2repository
   - $ANDROID_TARGET
   - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
