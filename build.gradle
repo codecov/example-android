@@ -1,19 +1,20 @@
 buildscript {
   repositories {
     jcenter()
+    google()
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:2.0.0'
-    classpath 'com.dicedmelon.gradle:jacoco-android:0.1.1'
+    classpath 'com.android.tools.build:gradle:3.5.3'
+    classpath 'com.dicedmelon.gradle:jacoco-android:0.1.4'
   }
 }
 
 ext {
-  configCompileSdkVersion = 23
-  configTargetSdkVersion = 23
+  configCompileSdkVersion = 28
+  configTargetSdkVersion = 28
   configBuildToolsVersion = '28.0.3'
 
-  supportVersion = '23.1.1'
+  supportVersion = '28.0.0'
   support = [annotations: "com.android.support:support-annotations:$supportVersion",
              appCompat  : "com.android.support:appcompat-v7:$supportVersion"]
 
@@ -27,6 +28,7 @@ ext {
 allprojects {
   repositories {
     jcenter()
+    google()
   }
 
   project.version = '0.1.0'
