@@ -10,8 +10,8 @@ android {
     applicationId 'com.dicedmelon.example.android'
     targetSdkVersion configTargetSdkVersion
     versionCode 1
-    versionName project.version
-    testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+    versionName '1.0'
+    testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
   }
 
   buildTypes {
@@ -28,11 +28,11 @@ android {
 }
 
 dependencies {
-  compile support.appCompat
+  implementation support.appCompat
 
-  testCompile assertJCore
-  testCompile junit
+  testImplementation assertJCore
+  testImplementation junit
 
-  androidTestCompile supportTest.espressoCore
-  androidTestCompile supportTest.rules
+  androidTestImplementation supportTest.espressoCore
+  androidTestImplementation supportTest.rules
 }
