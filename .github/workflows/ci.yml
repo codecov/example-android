@@ -1,0 +1,29 @@
+name: Android
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '9.0.4'
+      - name: Build debug APK
+        run: bash ./gradlew assembleDebug --stacktrace
+      - name: Build debug
+        run: ./gradlew build jacocoTestReport assembleAndroidTest
+      - name: Echo
+        run: echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
+      - name: Emulator
+        run: emulator -avd test -no-skin -no-audio -no-window &
+      - name: Wait for emulator
+        run: android-wait-for-emulator
+      - name: Run adb
+        run: adb shell setprop dalvik.vm.dexopt-flags v=n,o=v
+      - name: Check
+        run: ./gradlew connectedCheck
+      - name: Upload coverage to Codecov
+        run: bash <(curl -s https://codecov.io/bash)
