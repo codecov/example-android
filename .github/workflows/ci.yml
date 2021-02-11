@@ -11,10 +11,8 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: '9.0.4'
-      - name: Build debug APK
-        run: bash ./gradlew assembleDebug --stacktrace
       - name: Build debug
-        run: ./gradlew build jacocoTestReport assembleAndroidTest
+        run: bash ./gradlew build jacocoTestReport assembleAndroidTest
       - name: Echo
         run: echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
       - name: Emulator
