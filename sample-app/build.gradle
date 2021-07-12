@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'jacoco-android'
+apply plugin: "com.dicedmelon.gradle.jacoco-android"
 
 android {
   compileSdkVersion configCompileSdkVersion
