@@ -1,10 +1,11 @@
 buildscript {
   repositories {
     google()
+    mavenCentral()
   }
   dependencies {
     classpath 'com.android.tools.build:gradle:4.2.0'
-    classpath 'com.dicedmelon.gradle:jacoco-android:0.1.4'
+    classpath 'com.dicedmelon.gradle:jacoco-android:0.1.5'
   }
 }
 
@@ -27,6 +28,7 @@ ext {
 allprojects {
   repositories {
     google()
+    mavenCentral()
   }
 
   project.version = '0.1.0'
