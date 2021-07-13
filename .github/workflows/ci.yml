@@ -20,6 +20,6 @@ jobs:
           script: ./gradlew connectedCheck
       - name: Upload coverage to Codecov
         run: |
-          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          curl -Os https://uploader.codecov.io/latest/macos/codecov
           chmod +x codecov
           ./codecov
