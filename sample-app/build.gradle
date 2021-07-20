@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'jacoco-android'
+apply plugin: "com.dicedmelon.gradle.jacoco-android"
 
 android {
   compileSdkVersion configCompileSdkVersion
@@ -13,12 +13,15 @@ android {
     testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
   }
 
+  flavorDimensions "version"
   productFlavors {
     free {
       applicationId 'com.dicedmelon.example.android.free'
+      dimension "version"
     }
     paid {
       applicationId 'com.dicedmelon.example.android'
+      dimension "version"
     }
   }
 
@@ -30,17 +33,17 @@ android {
     }
   }
 
-  dataBinding {
-    enabled = true
+  buildFeatures {
+    dataBinding = true
   }
 }
 
 dependencies {
-  compile support.appCompat
+  implementation support.appCompat
 
-  testCompile assertJCore
-  testCompile junit
+  testImplementation assertJCore
+  testImplementation junit
 
-  androidTestCompile supportTest.espressoCore
-  androidTestCompile supportTest.rules
+  androidTestImplementation supportTest.espressoCore
+  androidTestImplementation supportTest.rules
 }
